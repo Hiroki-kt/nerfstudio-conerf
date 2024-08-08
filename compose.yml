@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  nerfstudio:
+    # image: dromni/nerfstudio:0.3.4
+    image: nerfstudio-89:1.0.0
+    ports:
+      - 7007:7007
+    volumes:
+      - /home/hiro/wd/conerf:/workspace/
+      - /home/hiro/.cache/:/home/user/.cache/
+    shm_size: 12gb
+    tty: true
+    user: 1000:1000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+              count: 1

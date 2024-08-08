@@ -175,4 +175,4 @@ WORKDIR /workspace
 RUN ns-install-cli --mode install
 
 # Bash as default entrypoint.
-CMD /bin/bash -l
+# CMD /bin/bash -l
